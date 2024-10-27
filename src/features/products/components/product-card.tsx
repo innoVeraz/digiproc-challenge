@@ -18,7 +18,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <div>
-      <Image src={image} alt={name} width={200} height={200} />
+      <Image src={image} alt={name} width={200} height={164} priority />
       <div>{price}</div>
       <div>{name}</div>
       <div>{rating}</div>
