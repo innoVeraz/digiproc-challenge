@@ -1,8 +1,8 @@
-type Product = {
+export type Product = {
   name: string;
   price: number;
   rating: number;
-  color: string;
+  color: "orange" | "blue" | "green";
   image: string;
 };
 
