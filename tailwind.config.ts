@@ -16,6 +16,9 @@ const config: Config = {
         ratingStar: "#F7B559",
         priceText: "#1A364C",
       },
+      letterSpacing: {
+        "extra-tight": "-0.022em",
+      },
     },
   },
   plugins: [],
