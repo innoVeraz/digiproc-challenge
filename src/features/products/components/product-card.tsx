@@ -1,9 +1,9 @@
 import Button from "@/components/ui/button";
 import Image from "next/image";
 import { Product } from "../types/products";
-import StarIcon from "./star-icon";
 import Header from "./header";
 import PriceTag from "./price-tag";
+import Rating from "./rating";
 
 type ProductCardProps = Product;
 
@@ -20,17 +20,9 @@ export default function ProductCard({
         <Image src={image} alt={name} width={200} height={164} priority />
         <PriceTag price={price} />
       </div>
-
       <div className="flex flex-col items-center text-center p-2">
         <Header color={color} name={name} />
-        <div className="">
-          <div className="text-xs mb-1">Ratings</div>
-          <div className="flex gap-[2px] mb-6">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <StarIcon key={index} fill={index < rating} />
-            ))}
-          </div>
-        </div>
+        <Rating rating={rating} />
         <Button bgColor={color}>ADD TO CART</Button>
       </div>
     </div>
