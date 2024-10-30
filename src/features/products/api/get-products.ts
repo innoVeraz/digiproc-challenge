@@ -1,7 +1,10 @@
-import { Products } from "../types/products";
+import { Product, Products } from "../types/products";
+import clientPromise from "../../../lib/mongodb";
 
-export const getProducts = async () => {
-  const response = await fetch("http://localhost:3001/api/products");
-  const data: Products = await response.json();
-  return data;
-};
+export async function getProducts(): Promise<Products> {
+  const client = await clientPromise;
+  const db = client.db("digibase");
+
+  const products = await db.collection<Product>("products").find({}).toArray();
+  return products;
+}
