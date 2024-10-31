@@ -1,5 +1,4 @@
-export interface Product {
-  _id: string;
+export interface ProductEntity {
   image: string;
   name: string;
   price: number;
@@ -7,4 +6,6 @@ export interface Product {
   color: "orange" | "blue" | "green";
 }
 
-export type Products = Product[];
+export interface ProductDTO extends ProductEntity {
+  id: string;
+}
