@@ -1,16 +1,12 @@
-"use client";
-
-import { useCart } from "@/context/cart-context";
-import { Product } from "@/features/products/types/products";
+import { ProductDTO } from "@/features/products/types/products";
 
 type ButtonProps = {
   children: React.ReactNode;
-  bgColor: Product["color"];
+  bgColor: ProductDTO["color"];
+  onClick: () => void;
 };
 
-export default function Button({ children, bgColor }: ButtonProps) {
-  const { addToCart } = useCart();
-
+export default function Button({ children, bgColor, onClick }: ButtonProps) {
   const colorClasses = {
     orange: "bg-orange",
     blue: "bg-blue",
@@ -19,8 +15,9 @@ export default function Button({ children, bgColor }: ButtonProps) {
 
   return (
     <button
-      onClick={addToCart}
-      className={`py-3 rounded-[6px] font-bold text-xs text-white ${colorClasses[bgColor]} w-full`}
+      onClick={onClick}
+      className={`py-3 rounded-[6px] font-bold text-xs text-white ${colorClasses[bgColor]} w-full
+        shadow-md transition-all duration-300 cursor-pointer hover:shadow-lg active:shadow-sm active:scale-95 `}
     >
       {children}
     </button>
