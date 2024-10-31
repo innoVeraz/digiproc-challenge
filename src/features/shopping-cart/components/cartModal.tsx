@@ -18,7 +18,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/70 z-50" />
 
-        <Dialog.Content className="fixed left-1/2 w-full max-w-xs md:top-1/2 md:w-96 lg:w-[50%] lg:max-w-2xl lg:h-[80%] -translate-x-1/2 md:-translate-y-1/2 bg-white rounded-lg p-4 md:p-6 shadow-lg z-50 transition-transform transform scale-100 duration-300 ease-out">
+        <Dialog.Content className="fixed text-blue left-1/2 w-full max-w-xs md:top-1/2 md:w-96 lg:w-[50%] lg:max-w-2xl lg:h-[60%] -translate-x-1/2 md:-translate-y-1/2 bg-white rounded-lg p-4 md:p-6 shadow-lg z-50 transition-transform transform scale-100 duration-300 ease-out">
           <div className="w-full flex justify-between items-center mb-6">
             <Dialog.Title className="text-lg md:text-2xl font-bold text-center w-full">
               Varukorgen
@@ -37,7 +37,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                 Varukorgen är tom
               </p>
             ) : (
-              <div className="space-y-4 w-full">
+              <div className="space-y-6 w-full">
                 {cartItems.map((item) => (
                   <div
                     key={item.id}
@@ -54,10 +54,8 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                       <p className="font-semibold text-lg md:text-xl">
                         {item.name}
                       </p>
-                      <p className="text-gray-700">{item.price} SEK</p>
-                      <p className="text-sm text-gray-500">
-                        Antal: {item.quantity}
-                      </p>
+                      <p className="font-bold">{item.price} SEK</p>
+                      <p className=" font-normal">Antal: {item.quantity}</p>
                     </div>
                   </div>
                 ))}
