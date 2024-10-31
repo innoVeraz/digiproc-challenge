@@ -1,7 +1,7 @@
-import { Product } from "../types/products";
+import { ProductDTO } from "../types/products";
 
 type PriceTagProps = {
-  price: Product["price"];
+  price: ProductDTO["price"];
 };
 
 export default function PriceTag({ price }: PriceTagProps) {

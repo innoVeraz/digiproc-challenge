@@ -1,8 +1,8 @@
-import { Product } from "../types/products";
+import { ProductDTO } from "../types/products";
 
 type HeaderProps = {
   name: string;
-  color: Product["color"];
+  color: ProductDTO["color"];
 };
 
 export default function Header({ name, color }: HeaderProps) {

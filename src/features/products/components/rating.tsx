@@ -1,9 +1,9 @@
 import React from "react";
 import StarIcon from "./star-icon";
-import { Product } from "../types/products";
+import { ProductDTO } from "../types/products";
 
 type RatingProps = {
-  rating: Product["rating"];
+  rating: ProductDTO["rating"];
 };
 
 export default function Rating({ rating }: RatingProps) {
